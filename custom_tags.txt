@@ -1,2 +1,2 @@
 VERSION     :0.1.0
-TITLE       :jR Pedestrians
+TITLE       :jR-Pedestrians
