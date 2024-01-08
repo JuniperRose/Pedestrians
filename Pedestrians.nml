@@ -1,7 +1,111 @@
+//Main block
 grf {
     grfid:                  "JR\01\01";
     name:                   string(STR_GRF_NAME);
     desc:                   string(STR_GRF_DESCRIPTION);
     version:                0;
     min_compatible_version: 0;
+}
+
+// Sprite template for a pedestrian (3*4*3 on PixelTool)
+template tmpl_pedestrian(x, y) {
+    //left_x, upper_y, width, height, offset_x, offset_y
+    [0 + x,  y,     2,  5,      -1, -2]
+    [3 + x,  y,     3,  5,      -1, -2]
+    [7 + x,  y,     3,  4,      -1, -2]
+    [11 + x, y,     3,  5,      -1, -2]
+    [15 + x, y,     2,  5,      -1, -2]
+    [18 + x, y,     3,  5,      -1, -2]
+    [22 + x, y,     3,  4,      -1, -2]
+    [26 + x, y,     3,  5,      -1, -2]
+}
+
+//graphics definition
+//Pedestrian
+spriteset(spriteset_pedestrian_1_empty, "gfx/pedestrian.png") {
+    tmpl_pedestrian(0, 0)
+}
+spriteset(spriteset_pedestrian_1_full, "gfx/pedestrian.png") {
+    tmpl_pedestrian(0, 6)
+}
+//Courier
+spriteset(spriteset_courier_1_empty, "gfx/courier.png") {
+    tmpl_pedestrian(0, 0)
+}
+spriteset(spriteset_courier_1_full, "gfx/courier.png") {
+    tmpl_pedestrian(0, 6)
+}
+
+spritegroup spritegroup_pedestrian_1 {
+    loaded:  [spriteset_pedestrian_1_empty, spriteset_pedestrian_1_full];
+    loading: [spriteset_pedestrian_1_empty, spriteset_pedestrian_1_full];
+}
+spritegroup spritegroup_curier_1 {
+    loaded:  [spriteset_courier_1_empty, spriteset_courier_1_full];
+    loading: [spriteset_courier_1_empty, spriteset_courier_1_full];
+}
+
+//Item block for pedestrian road vehicle.
+item(FEAT_ROADVEHS, item_pedestrian_1){
+    //Define properties
+    property{
+        //Properties common to all vehicle types:
+        name:                       string(STR_NAME_PEDESTRIAN);
+        climates_available:         bitmask(ALL_CLIMATES);
+        introduction_date:          date(0,1,1);
+        model_life:                 VEHICLE_NEVER_EXPIRES;
+        vehicle_life:               60;
+        reliability_decay:          1;
+        refittable_cargo_classes:   bitmask(CC_PASSENGERS);
+        loading_speed:              1;
+        cost_factor:                25;
+        running_cost_factor:        25;
+
+        //Road vehicle properties:
+        sprite_id:                  SPRITE_ID_NEW_ROADVEH; //enable new graphics
+        speed:                      5 km/h;
+        misc_flags:                 bitmask(ROADVEH_FLAG_NO_BREAKDOWN_SMOKE);
+        running_cost_base:          RUNNING_COST_ROADVEH;
+        power:                      1 hp;
+        weight:                     80 kg;
+        cargo_capacity:             1;
+        visual_effect:              visual_effect(VISUAL_EFFECT_DISABLE);
+        }
+    //Define graphics
+    graphics {
+        default: spritegroup_pedestrian_1;
+        additional_text: return string(STR_DESC_PEDESTRIAN;)
+    }
+}
+//Item block for courier road vehicle.
+item(FEAT_ROADVEHS, item_courier_1){
+    //Define properties
+    property{
+        //Properties common to all vehicle types:
+        name:                       string(STR_NAME_COURIER);
+        climates_available:         bitmask(ALL_CLIMATES);
+        introduction_date:          date(0,1,1);
+        model_life:                 VEHICLE_NEVER_EXPIRES;
+        vehicle_life:               60;
+        reliability_decay:          1;
+        refittable_cargo_classes:   bitmask(CC_MAIL);
+        loading_speed:              1;
+        cost_factor:                50;
+        running_cost_factor:        50;
+
+        //Road vehicle properties:
+        sprite_id:                  SPRITE_ID_NEW_ROADVEH; //enable new graphics
+        speed:                      6 km/h;
+        misc_flags:                 bitmask(ROADVEH_FLAG_NO_BREAKDOWN_SMOKE);
+        running_cost_base:          RUNNING_COST_ROADVEH;
+        power:                      1 hp;
+        weight:                     80 kg;
+        cargo_capacity:             1;
+        visual_effect:              visual_effect(VISUAL_EFFECT_DISABLE);
+        }
+    //Define graphics
+    graphics {
+        default: spritegroup_courier_1;
+        additional_text: return string(STR_DESC_COURIER;)
+    }
 }
