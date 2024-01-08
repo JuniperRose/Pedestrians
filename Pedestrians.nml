@@ -1,6 +1,6 @@
 //Main block
 grf {
-    grfid:                  "JR\01\01";
+    grfid:                  "jR\01\01";
     name:                   string(STR_GRF_NAME);
     desc:                   string(STR_GRF_DESCRIPTION);
     version:                0;
