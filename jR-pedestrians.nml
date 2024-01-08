@@ -63,16 +63,16 @@ item(FEAT_ROADVEHS, item_pedestrian_1){
         reliability_decay:          1;
         refittable_cargo_classes:   bitmask(CC_PASSENGERS);
         loading_speed:              1;
-        cost_factor:                25;
+        cost_factor:                1;
         running_cost_factor:        25;
 
         //Road vehicle properties:
         sprite_id:                  SPRITE_ID_NEW_ROADVEH; //enable new graphics
         speed:                      5 km/h;
         road_type:                  RAAN;
-        misc_flags:                 bitmask(ROADVEH_FLAG_NO_BREAKDOWN_SMOKE);
+        misc_flags:                 bitmask(ROADVEH_FLAG_NO_BREAKDOWN_SMOKE, ROADVEH_FLAG_2CC);
         running_cost_base:          RUNNING_COST_ROADVEH;
-        power:                      1 hp;
+        power:                      2 hp;
         weight:                     80 kg;
         cargo_capacity:             1;
         visual_effect:              visual_effect(VISUAL_EFFECT_DISABLE, 0);
@@ -96,16 +96,16 @@ item(FEAT_ROADVEHS, item_courier_1){
         reliability_decay:          1;
         refittable_cargo_classes:   bitmask(CC_MAIL);
         loading_speed:              1;
-        cost_factor:                50;
-        running_cost_factor:        50;
+        cost_factor:                3;
+        running_cost_factor:        3;
 
         //Road vehicle properties:
         sprite_id:                  SPRITE_ID_NEW_ROADVEH; //enable new graphics
-        speed:                      6 km/h;
+        speed:                      12 km/h;
         road_type:                  RAAN;
-        misc_flags:                 bitmask(ROADVEH_FLAG_NO_BREAKDOWN_SMOKE);
+        misc_flags:                 bitmask(ROADVEH_FLAG_NO_BREAKDOWN_SMOKE, ROADVEH_FLAG_2CC);
         running_cost_base:          RUNNING_COST_ROADVEH;
-        power:                      1 hp;
+        power:                      2 hp;
         weight:                     80 kg;
         cargo_capacity:             1;
         visual_effect:              visual_effect(VISUAL_EFFECT_DISABLE, 0);
