@@ -64,6 +64,7 @@ item(FEAT_ROADVEHS, item_pedestrian_1){
         //Road vehicle properties:
         sprite_id:                  SPRITE_ID_NEW_ROADVEH; //enable new graphics
         speed:                      5 km/h;
+        road_type:                  OFFR;
         misc_flags:                 bitmask(ROADVEH_FLAG_NO_BREAKDOWN_SMOKE);
         running_cost_base:          RUNNING_COST_ROADVEH;
         power:                      1 hp;
@@ -96,6 +97,7 @@ item(FEAT_ROADVEHS, item_courier_1){
         //Road vehicle properties:
         sprite_id:                  SPRITE_ID_NEW_ROADVEH; //enable new graphics
         speed:                      6 km/h;
+        road_type:                  OFFR;
         misc_flags:                 bitmask(ROADVEH_FLAG_NO_BREAKDOWN_SMOKE);
         running_cost_base:          RUNNING_COST_ROADVEH;
         power:                      1 hp;

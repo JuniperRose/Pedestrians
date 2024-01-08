@@ -7,7 +7,7 @@ STR_GRF_NAME            :{TITLE} {VERSION}
 STR_GRF_DESCRIPTION     :{TITLE} adds road vehicles that functions as pedestrians. They are availble from year 0 and never expire.{} Insprired by JustWalkIt by DemonBigj781.{}License: GPL v3
 
 # Vehicle names
-STR_NAME_PEDESTRIAN     :Pedestrians
+STR_NAME_PEDESTRIAN     :Pedestrian
 STR_NAME_COURIER        :Courier
 
 # Vehicle descriptions
