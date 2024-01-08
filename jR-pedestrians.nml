@@ -45,6 +45,12 @@ spritegroup spritegroup_courier_1 {
     loading: [spriteset_courier_1_empty, spriteset_courier_1_full];
 }
 
+//Roadtypetable for compability with other newGRF
+roadtypetable {
+ 	ROAD, OLD_, ACLK, AR11, AR12, AR13, AR14, AR21, AR22, AR23, AR24, ELSP, ALSP, ELRD, ELA1, ELA2, ELA0, ALA0, ASP0, FUEL, ASP1, ASP2, SAND, COBB, COB2, COB3, COB4, BEAC, HWAY, FWAY, DIRT, SETT, ISR1, ISR2, AUZ1, AUZ2, AUZ3, AUZ4, AUZ5, AUZ6, AUZ7, AUZ8, AUZ9, AUZ0, AUZA, AUZB, AUZC, AUZD, AUZE, AUZF, AUZG, AUZH, AUZI, AUZJ, AUZK, AUZL, AUZY, AUZZ, YARD, COAL, HAUL,	OFFR,	ORD0,	ORD1,	ORD2,	ORD3,	ORD4,	SRD0,	SRD1,	SRD2,	ARD0,	ARD1,	AER0,	ARD2,	ARD3,	AER1,	ARD4,	ARD5,	AER2,	WRD0,	WRD1,	URD0,	URD1,	UER1,	IRD0,	IRD1,
+
+}
+
 //Item block for pedestrian road vehicle.
 item(FEAT_ROADVEHS, item_pedestrian_1){
     //Define properties
