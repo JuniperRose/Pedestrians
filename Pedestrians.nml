@@ -40,7 +40,7 @@ spritegroup spritegroup_pedestrian_1 {
     loaded:  [spriteset_pedestrian_1_empty, spriteset_pedestrian_1_full];
     loading: [spriteset_pedestrian_1_empty, spriteset_pedestrian_1_full];
 }
-spritegroup spritegroup_curier_1 {
+spritegroup spritegroup_courier_1 {
     loaded:  [spriteset_courier_1_empty, spriteset_courier_1_full];
     loading: [spriteset_courier_1_empty, spriteset_courier_1_full];
 }
@@ -51,7 +51,7 @@ item(FEAT_ROADVEHS, item_pedestrian_1){
     property{
         //Properties common to all vehicle types:
         name:                       string(STR_NAME_PEDESTRIAN);
-        climates_available:         bitmask(ALL_CLIMATES);
+        climates_available:         ALL_CLIMATES;
         introduction_date:          date(0,1,1);
         model_life:                 VEHICLE_NEVER_EXPIRES;
         vehicle_life:               60;
@@ -69,7 +69,7 @@ item(FEAT_ROADVEHS, item_pedestrian_1){
         power:                      1 hp;
         weight:                     80 kg;
         cargo_capacity:             1;
-        visual_effect:              visual_effect(VISUAL_EFFECT_DISABLE);
+        visual_effect:              visual_effect(VISUAL_EFFECT_DISABLE, 0);
         }
     //Define graphics
     graphics {
@@ -83,7 +83,7 @@ item(FEAT_ROADVEHS, item_courier_1){
     property{
         //Properties common to all vehicle types:
         name:                       string(STR_NAME_COURIER);
-        climates_available:         bitmask(ALL_CLIMATES);
+        climates_available:         ALL_CLIMATES;
         introduction_date:          date(0,1,1);
         model_life:                 VEHICLE_NEVER_EXPIRES;
         vehicle_life:               60;
@@ -101,7 +101,7 @@ item(FEAT_ROADVEHS, item_courier_1){
         power:                      1 hp;
         weight:                     80 kg;
         cargo_capacity:             1;
-        visual_effect:              visual_effect(VISUAL_EFFECT_DISABLE);
+        visual_effect:              visual_effect(VISUAL_EFFECT_DISABLE, 0);
         }
     //Define graphics
     graphics {
