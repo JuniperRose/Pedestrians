@@ -1,3 +1,22 @@
+/*To do
+Remake the sprites to 3 pixels tall, will need a new template and y-value for spriteset.(One pixel same for all vehicles, one for the type of cargo, one for company color)
+Add more text files
+Add compatible roads text, is there a standard way?
+Add readme file
+Add licence file
+Add parameters (If they are needed)
+Add changelog file (Only for version 2 and on)
+Add a group of people walking together. Scaling sprites etc.
+Swimmer as an early ship. Later one with new for fish cargo.
+
+Make newGRF for early row boats for fish and passangers. Barge or raft for cargo.
+
+Make wheelbarrow GRF for early slow cargo.(3-4 km/h, 1 ton). Invented year 118. (Parameter for year 0 or realistic)
+
+Research dev standards for openTTD.
+Look into how the company color recoloring works.
+*/
+
 //Main block
 grf {
     grfid:                  "jR\01\01";
