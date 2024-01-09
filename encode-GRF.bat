@@ -1,0 +1,1 @@
+nmlc -c --grf jR-pedestrians\jR-pedestrians.grf jR-pedestrians.nml

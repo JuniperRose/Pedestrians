@@ -9,7 +9,9 @@ STR_GRF_DESCRIPTION     :{TITLE} adds road vehicles that functions as pedestrian
 # Vehicle names
 STR_NAME_PEDESTRIAN     :Pedestrian
 STR_NAME_COURIER        :Courier
+STR_NAME_SWIMMER        :Swimmer
 
 # Vehicle descriptions
 STR_DESC_PEDESTRIAN     :A pedestrian capable of walking between stations.
 STR_DESC_COURIER        :A courier capable of carrying mail between stations.
+STR_DESC_SWIMMER        :A swimmer capable of swimming between docks.

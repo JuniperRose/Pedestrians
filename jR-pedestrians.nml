@@ -1,22 +1,3 @@
-/*To do
-Remake the sprites to 3 pixels tall, will need a new template and y-value for spriteset.(One pixel same for all vehicles, one for the type of cargo, one for company color)
-Add more text files
-Add compatible roads text, is there a standard way?
-Add readme file
-Add licence file
-Add parameters (If they are needed)
-Add changelog file (Only for version 2 and on)
-Add a group of people walking together. Scaling sprites etc.
-Swimmer as an early ship. Later one with new for fish cargo.
-
-Make newGRF for early row boats for fish and passangers. Barge or raft for cargo.
-
-Make wheelbarrow GRF for early slow cargo.(3-4 km/h, 1 ton). Invented year 118. (Parameter for year 0 or realistic)
-
-Research dev standards for openTTD.
-Look into how the company color recoloring works.
-*/
-
 //Main block
 grf {
     grfid:                  "jR\01\01";
@@ -74,27 +55,29 @@ item(FEAT_ROADVEHS, item_pedestrian_1){
     //Define properties
     property{
         //Properties common to all vehicle types:
-        name:                       string(STR_NAME_PEDESTRIAN);
-        climates_available:         ALL_CLIMATES;
-        introduction_date:          date(0,1,1);
-        model_life:                 VEHICLE_NEVER_EXPIRES;
-        vehicle_life:               60;
-        reliability_decay:          1;
-        refittable_cargo_classes:   bitmask(CC_PASSENGERS);
-        loading_speed:              1;
-        cost_factor:                1;
-        running_cost_factor:        25;
+        name:                           string(STR_NAME_PEDESTRIAN);
+        climates_available:             ALL_CLIMATES;
+        introduction_date:              date(0,1,1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   60;
+        reliability_decay:              1;
+        refittable_cargo_classes:       bitmask(CC_PASSENGERS);
+        loading_speed:                  1;
+        cost_factor:                    1;
+        running_cost_factor:            1;
 
-        //Road vehicle properties:
-        sprite_id:                  SPRITE_ID_NEW_ROADVEH; //enable new graphics
-        speed:                      5 km/h;
-        road_type:                  RAAN;
-        misc_flags:                 bitmask(ROADVEH_FLAG_NO_BREAKDOWN_SMOKE, ROADVEH_FLAG_2CC);
-        running_cost_base:          RUNNING_COST_ROADVEH;
-        power:                      2 hp;
-        weight:                     80 kg;
-        cargo_capacity:             1;
-        visual_effect:              visual_effect(VISUAL_EFFECT_DISABLE, 0);
+        //Road vehicle properties:  
+        sprite_id:                      SPRITE_ID_NEW_ROADVEH; //enable new graphics
+        speed:                          5 km/h;
+        road_type:                      RAAN;
+        misc_flags:                     bitmask(ROADVEH_FLAG_NO_BREAKDOWN_SMOKE);
+        running_cost_base:              RUNNING_COST_ROADVEH;
+        power:                          1 hp;
+        weight:                         80 kg;
+        tractive_effort_coefficient:    0;
+        air_drag_coefficient:           0;
+        cargo_capacity:                 1;
+        visual_effect:                  visual_effect(VISUAL_EFFECT_DISABLE, 0);
         }
     //Define graphics
     graphics {
@@ -107,31 +90,62 @@ item(FEAT_ROADVEHS, item_courier_1){
     //Define properties
     property{
         //Properties common to all vehicle types:
-        name:                       string(STR_NAME_COURIER);
-        climates_available:         ALL_CLIMATES;
-        introduction_date:          date(0,1,1);
-        model_life:                 VEHICLE_NEVER_EXPIRES;
-        vehicle_life:               60;
-        reliability_decay:          1;
-        refittable_cargo_classes:   bitmask(CC_MAIL);
-        loading_speed:              1;
-        cost_factor:                3;
-        running_cost_factor:        3;
+        name:                           string(STR_NAME_COURIER);
+        climates_available:             ALL_CLIMATES;
+        introduction_date:              date(0,1,1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   60;
+        reliability_decay:              1;
+        refittable_cargo_classes:       bitmask(CC_MAIL);
+        loading_speed:                  1;
+        cost_factor:                    3;
+        running_cost_factor:            3;
 
         //Road vehicle properties:
-        sprite_id:                  SPRITE_ID_NEW_ROADVEH; //enable new graphics
-        speed:                      12 km/h;
-        road_type:                  RAAN;
-        misc_flags:                 bitmask(ROADVEH_FLAG_NO_BREAKDOWN_SMOKE, ROADVEH_FLAG_2CC);
-        running_cost_base:          RUNNING_COST_ROADVEH;
-        power:                      2 hp;
-        weight:                     80 kg;
-        cargo_capacity:             1;
-        visual_effect:              visual_effect(VISUAL_EFFECT_DISABLE, 0);
+        sprite_id:                      SPRITE_ID_NEW_ROADVEH; //enable new graphics
+        speed:                          12 km/h;
+        road_type:                      RAAN;
+        misc_flags:                     bitmask(ROADVEH_FLAG_NO_BREAKDOWN_SMOKE);
+        running_cost_base:              RUNNING_COST_ROADVEH;
+        power:                          1 hp;
+        weight:                         80 kg;
+        tractive_effort_coefficient:    0;
+        air_drag_coefficient:           0;
+        cargo_capacity:                 1;
+        visual_effect:                  visual_effect(VISUAL_EFFECT_DISABLE, 0);
         }
     //Define graphics
     graphics {
         default: spritegroup_courier_1;
         additional_text: return string(STR_DESC_COURIER);
+    }
+}
+item(FEAT_SHIPS, item_swimmer_1){
+    //Define properties
+    property{
+        //Properties common to all vehicle types:
+        name:                           string(STR_NAME_SWIMMER);
+        climates_available:             ALL_CLIMATES;
+        introduction_date:              date(0,1,1);
+        model_life:                     VEHICLE_NEVER_EXPIRES;
+        vehicle_life:                   60;
+        reliability_decay:              1;
+        refittable_cargo_classes:       bitmask(CC_PASSENGERS);
+        loading_speed:                  1;
+        cost_factor:                    2;
+        running_cost_factor:            2;
+
+        //Ship properties:  
+        sprite_id:                      SPRITE_ID_NEW_SHIP; //enable new graphics
+        speed:                          3 km/h;
+        misc_flags:                     bitmask(SHIP_FLAG_NO_BREAKDOWN_SMOKE);
+        running_cost_base:              RUNNING_COST_ROADVEH;
+        cargo_capacity:                 1;
+        visual_effect:                  visual_effect(VISUAL_EFFECT_DISABLE, 0);
+        }
+    //Define graphics
+    graphics {
+        default: spritegroup_pedestrian_1;
+        additional_text: return string(STR_DESC_SWIMMER);
     }
 }
