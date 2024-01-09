@@ -139,7 +139,6 @@ item(FEAT_SHIPS, item_swimmer_1){
         sprite_id:                      SPRITE_ID_NEW_SHIP; //enable new graphics
         speed:                          3 km/h;
         misc_flags:                     bitmask(SHIP_FLAG_NO_BREAKDOWN_SMOKE);
-        running_cost_base:              RUNNING_COST_ROADVEH;
         cargo_capacity:                 1;
         visual_effect:                  visual_effect(VISUAL_EFFECT_DISABLE, 0);
         }
